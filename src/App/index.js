@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppUI} from './AppUI';
+import { AppUI } from './AppUI';
 
 // const defaultTodos = [
 //   { text: 'Cortar cebolla', completed: true },
@@ -12,20 +12,20 @@ function useLocalStorage(itemName, initialValue) {
   const [error, setError] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const [item, setItem] = React.useState(initialValue);
-
+  
   React.useEffect(() => {
     setTimeout(() => {
       try {
         const localStorageItem = localStorage.getItem(itemName);
         let parsedItem;
-
+        
         if (!localStorageItem) {
           localStorage.setItem(itemName, JSON.stringify(initialValue));
           parsedItem = initialValue;
         } else {
           parsedItem = JSON.parse(localStorageItem);
         }
-        
+
         setItem(parsedItem);
         setLoading(false);
       } catch(error) {
@@ -33,8 +33,7 @@ function useLocalStorage(itemName, initialValue) {
       }
     }, 1000);
   });
-
-
+  
   const saveItem = (newItem) => {
     try {
       const stringifiedItem = JSON.stringify(newItem);
@@ -45,20 +44,21 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
-  return [
+  return {
     item,
     saveItem,
     loading,
     error,
-  ];
+  };
 }
 
 function App() {
-  // Desestructuramos los datos que retornamos de nuestro custom hook, y le pasamos los argumentos que necesitamos (nombre y estado inicial)
-  const {   item: todos,
+  const {
+    item: todos,
     saveItem: saveTodos,
     loading,
-    error,} = useLocalStorage('TODOS_V1', []);
+    error,
+  } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -89,7 +89,7 @@ function App() {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
-  
+
   return (
     <AppUI
       loading={loading}
@@ -102,7 +102,14 @@ function App() {
       completeTodo={completeTodo}
       deleteTodo={deleteTodo}
     />
-);
+  );
 }
 
 export default App;
+
+// Simulando una petición a una API
+// Dentro de una aplicación web, al trabajar con APIs, existen muchos factores para determinar cuánto tardará en cargar nuestra aplicación, como la velocidad de nuestro internet, la distancia del servidor, etc.
+
+// Al trabajar con APIs también debemos tener en cuenta que puede tardar en cargar mucho nuestra aplicación, o incluso puede ocurrir algún error, todo esto lo debemos de manejar para mantener a nuestro usuario informado.
+
+// El hook de efecto nos permite saber cuando ya renderizó nuestra aplicación, así podemos mostrar un mensaje de cargando o alguna animación en lo que se completa la petición, también con JavaScript podemos manejar los errores con try y catch, y haciendo uso del hook de estado podemos guardar si está cargando o hubo algún error.

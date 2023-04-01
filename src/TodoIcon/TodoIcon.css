@@ -23,7 +23,7 @@
     transition: fill .15s;
   }
   .Icon-container:hover .Icon-svg--check {
-    fill: #4caf50;
+    fill: #16c513;
   }
   .Icon-container:hover .Icon-svg--delete {
     fill: red;

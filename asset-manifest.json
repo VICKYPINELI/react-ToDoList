@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/%20react-todolist/static/css/main.213f43e4.css",
-    "main.js": "/%20react-todolist/static/js/main.5250066d.js",
-    "static/media/addTodo.png": "/%20react-todolist/static/media/addTodo.aa3916cb3fdff7aa49b2.png",
-    "index.html": "/%20react-todolist/index.html",
-    "static/media/delete.svg": "/%20react-todolist/static/media/delete.331149da222541bc87c25bf8d775a070.svg",
-    "static/media/check.svg": "/%20react-todolist/static/media/check.fa4fb594b16385306a04b9c87c0feb55.svg",
-    "main.213f43e4.css.map": "/%20react-todolist/static/css/main.213f43e4.css.map",
-    "main.5250066d.js.map": "/%20react-todolist/static/js/main.5250066d.js.map"
+    "main.css": "/react-todolist/static/css/main.213f43e4.css",
+    "main.js": "/react-todolist/static/js/main.7658cc50.js",
+    "static/media/addTodo.png": "/react-todolist/static/media/addTodo.aa3916cb3fdff7aa49b2.png",
+    "index.html": "/react-todolist/index.html",
+    "static/media/delete.svg": "/react-todolist/static/media/delete.331149da222541bc87c25bf8d775a070.svg",
+    "static/media/check.svg": "/react-todolist/static/media/check.fa4fb594b16385306a04b9c87c0feb55.svg",
+    "main.213f43e4.css.map": "/react-todolist/static/css/main.213f43e4.css.map",
+    "main.7658cc50.js.map": "/react-todolist/static/js/main.7658cc50.js.map"
   },
   "entrypoints": [
     "static/css/main.213f43e4.css",
-    "static/js/main.5250066d.js"
+    "static/js/main.7658cc50.js"
   ]
 }
